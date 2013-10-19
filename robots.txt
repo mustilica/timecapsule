@@ -1,0 +1,7 @@
+# /robots.txt file for mustilica.github.io/timecampsule
+
+User-agent: webcrawler
+Disallow:
+
+User-agent: *
+Disallow: 

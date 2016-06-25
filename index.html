@@ -1,0 +1,110 @@
+<!--
+You can reach source code from there: https://github.com/mustilica/timecapsule
+This site is generated from e.ggtimer.com
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Online time capsule by Mustafa ilhan</title>
+
+  <meta name="Description" content="TimeCapsule by Mustafa ilhan. It counts down from 01 October 2023. After that day passed, web-site content will be shown automatically.">
+  <meta name="keywords" content="timecapsule, time capsule, online time capsule, web based time capsule">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="mobileoptimized" content="0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="title" content="Online time capsule by Mustafa ilhan">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
+  <link rel="stylesheet" href="./files/timer.css" type="text/css" media="screen" title="Normal">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="progress"></div>
+    <div id="static"></div>
+  </div>
+
+  <div id="textWrapper">
+    <div class="first_text">This site is an online <a href="http://en.wikipedia.org/wiki/Time_capsule" target="_blank">time capsule</a> project and its content will be shown</div>
+    <div class="last_text">later.<br />Please come back again.</div>
+    <div class="gra501">Mustafa İlhan / Assist. Prof. Marek Brzozowski / GRA-501 Studio-I / Bilkent University / October 2013</div>
+    <h2 id="progressText"></h2>
+  </div>
+
+  <div class="capsule" id="capsule">
+    <div class="bg"></div>
+    <div class="info">
+      <div class="hide" onclick="hide()">Hide</div>
+      <h3>Changing Face of My Habitat</h3>
+
+      <p>This web page was created on October 1, 2013, as an assignment whose topic was to create a time capsule. The purpose of this time capsule is to save an image that captures the spirit of its date to be viewed in the future. I captured the image that you are viewing as a background of this site.</p>
+
+      <p>The background image was taken from Google Maps which is a very popular map application developed and served by Google. It is a satellite image that shows Middle East Technical University and 100. Yil at Ankara, TURKEY. I. Melih Gokcek, mayor of Ankara, was building a highway between the border of the university, 100. Yil and Cigdem district. When this image was taken, highway construction had already begun but it was not finished. In this image, you cannot able to see the highway. In other words, route of highway and effects of it did not observable. For the construction of the highway, 3000 trees will be slaughtered and residents of this area were unwilling and protesting the construction. At least 10 years later, now you can look for the effects of the highway for that particular area.</p>
+
+      <p>In this area mostly students were living and the population of 100. Yil district was more sparse than the other areas of Ankara. Students could go to university by walking and there was not any traffic jam. Now please compare that the current state of these areas with state of the 10 years ago. Are settlements increased? Is there any traffic jam? Do the trees still exist?</p>
+
+      <p>Cordinates of this area: 39.896601, 32.8023</p>
+
+      <p>There is also a <span onclick="openVideo()" style="background: #555; display: inline-block; padding: 5px; cursor: pointer">video</span> that recorded by the students of the university. It was about their ideas on the highway contruction.</p>
+    </div>
+    <div class="about" onclick="display()">About</div>
+  </div>
+
+  <div id="video" class="overlay" style="display:none; background: #000;">
+    <div class="hide" onclick="hide()" style="margin: 10px;">Hide</div>
+    <div style="position: absolute; top: 50%; margin-top: -180px; left: 50%; margin-left: -320px">
+      <div style="display: table-cell;">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/ejqdg-HZea4?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <audio id="beepbeep" style="display:none;" preload="auto" autobuffer="">
+    <source src="./files/beepbeep.mp3" type="audio/mpeg">
+    <source src="./files/beepbeep.ogg" type="audio/ogg">
+  </audio>
+
+  <script src="./files/jquery.min.js" type="text/javascript"></script>
+  <script src="./files/Time.min.js" type="text/javascript"></script>
+  <script src="./files/Egg3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    Egg.defaultText = "TimeCapsule";
+    Egg.title = "";
+    Egg.label = "";
+    Egg.expiredMessage = "Time has just came. Content will be displayed.";
+    Egg.startTime = new Date(2013, 9, 1, 0, 0, 0, 0).getTime();
+    Egg.endTime = new Date(2023, 9, 1, 0, 0, 0, 0).getTime();
+    Egg.parseError = "none";
+    Egg.volume = 1;
+  </script>
+
+  <script type="text/javascript">
+    function hide() {
+      $(".info").fadeOut();
+      $(".about").fadeIn();
+      $("#video").fadeOut();
+    }
+
+    function display() {
+      $(".info").fadeIn();
+      $(".about").fadeOut();
+    }
+
+    function openVideo() {
+      hide();
+      $("#video").fadeIn();
+    }
+
+    function showContent() {
+      $("#capsule").fadeIn();
+    }
+  </script>
+
+</body>
+
+</html>
